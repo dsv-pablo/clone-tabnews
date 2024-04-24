@@ -4,13 +4,14 @@
   "description": "Projeto para acompanhamento das atividades do curso.dev",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run bd:up && next dev",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "bd:up": "docker compose --file infra/compose.yaml up --detach",
-    "bd:down": "docker compose --file infra/compose.yaml down"
+    "bd:down": "docker compose --file infra/compose.yaml down",
+    "bd:stop": "docker compose --file infra/compose.yaml stop"
   },
   "author": "Pablo Vieira",
   "license": "MIT",
